@@ -15,7 +15,7 @@ Unchanged files are skipped by checksum. Changed files replace the previous docu
 The workflow in [`.github/workflows/sync-docs.yml`](.github/workflows/sync-docs.yml) checks out the repo and runs:
 
 ```yaml
-- uses: Actx0/doc-sync@v1
+- uses: Actx0/doc-sync@v1.0.0
   with:
     workspace_id: ${{ secrets.ACTX0_WORKSPACE_ID }}
     access_key: ${{ secrets.ACTX0_ACCESS_KEY }}
@@ -29,6 +29,8 @@ The workflow in [`.github/workflows/sync-docs.yml`](.github/workflows/sync-docs.
 ```
 
 Pull requests run in dry-run mode. Pushes to `main` upload and replace documents.
+
+The action is pinned to [`v1.0.0`](https://github.com/Actx0/doc-sync/releases/tag/v1.0.0). GitHub Actions resolves the exact git ref, so `@v1` only works if a `v1` tag exists.
 
 ## Sample docs
 

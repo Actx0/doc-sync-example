@@ -4,6 +4,8 @@ This repository is a working example of [Actx0/doc-sync](https://github.com/Actx
 
 The GitHub Action uploads markdown and text files from `docs/` into an Actx0 workspace knowledge base. Unchanged files are skipped by checksum; changed files replace the previous document with the same filename and labels.
 
+The workflow pins [`Actx0/doc-sync@v1.0.0`](https://github.com/Actx0/doc-sync/releases/tag/v1.0.0). GitHub Actions resolves the exact git tag, so `@v1` only works if that tag exists.
+
 ## What you need
 
 1. An [Actx0](https://app.actx0.com) workspace
