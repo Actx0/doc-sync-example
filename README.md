@@ -34,17 +34,38 @@ Pull requests run in dry-run mode. Pushes to `main` upload and replace documents
 
 Acme Platform knowledge used to exercise the action:
 
-| Path | Why it is here |
-| --- | --- |
-| `docs/*.md` | product overview, FAQ, glossary, architecture |
-| `docs/changelog.markdown` | `.markdown` extension |
-| `docs/api/` | authentication, accounts, billing |
-| `docs/guides/` | onboarding, local dev, deploy, troubleshooting |
-| `docs/runbooks/` | incidents, backups, scaling |
-| `docs/policies/` | security and retention |
-| `docs/reference/` | env vars and error codes |
-| `docs/snippets/curl-examples.mdx` | `.mdx` extension |
-| `docs/*.txt` | plain text notes |
+```text
+docs/
+├── getting-started.md
+├── overview.md
+├── architecture.md
+├── faq.md
+├── glossary.md
+├── changelog.markdown      # .markdown
+├── notes.txt               # plain text
+├── ops-notes.txt
+├── api/
+│   ├── authentication.md
+│   ├── accounts.md
+│   └── billing.md
+├── guides/
+│   ├── onboarding.md
+│   ├── local-development.md
+│   ├── deploy.md
+│   └── troubleshooting.md
+├── runbooks/
+│   ├── incident-response.md
+│   ├── restore-from-backup.md
+│   └── scale-workers.md
+├── policies/
+│   ├── security.md
+│   └── data-retention.md
+├── reference/
+│   ├── env-vars.md
+│   └── error-codes.md
+└── snippets/
+    └── curl-examples.mdx   # .mdx
+```
 
 `paths: docs/` walks that directory and syncs `.md`, `.mdx`, `.markdown`, and `.txt` files. You can also pass globs or individual files:
 
