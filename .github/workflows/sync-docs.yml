@@ -1,0 +1,34 @@
+name: Sync docs to Actx0
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Sync knowledge
+        id: sync
+        uses: Actx0/doc-sync@v1
+        with:
+          workspace_id: ${{ secrets.ACTX0_WORKSPACE_ID }}
+          access_key: ${{ secrets.ACTX0_ACCESS_KEY }}
+          tags: |
+            tag: docs
+            repo: ${{ github.repository }}
+            team: platform
+          paths: |
+            docs/
+          dry_run: ${{ github.event_name == 'pull_request' }}
+
+      - name: Print results
+        run: |
+          echo "uploaded=${{ steps.sync.outputs.uploaded }}"
+          echo "replaced=${{ steps.sync.outputs.replaced }}"
+          echo "skipped=${{ steps.sync.outputs.skipped }}"
+          echo "failed=${{ steps.sync.outputs.failed }}"

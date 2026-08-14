@@ -1,0 +1,5 @@
+Release notes (plain text)
+
+- v1: initial knowledge sync example
+- docs/ is the source of truth for this workspace
+- unchanged files are skipped by checksum

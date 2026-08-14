@@ -1,0 +1,7 @@
+Ops notes (plain text)
+
+- staging deploy is automatic from main
+- prod deploy needs two operator approvals
+- queue lag over 2 minutes -> scale workers
+- never restore prod over a live cluster without a pre-incident snapshot
+- doc-sync skips unchanged files by checksum

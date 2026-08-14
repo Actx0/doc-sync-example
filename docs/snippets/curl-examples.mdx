@@ -1,0 +1,24 @@
+# cURL examples
+
+This file uses `.mdx` so the example also syncs that type.
+
+## Health
+
+```bash
+curl -sS https://api.example.com/health
+```
+
+## Create an account
+
+```bash
+curl -sS -X POST https://api.example.com/v1/accounts \
+  -H "content-type: application/json" \
+  -d '{"email":"ops@example.com","plan":"pro"}'
+```
+
+## Authenticated get
+
+```bash
+curl -sS https://api.example.com/v1/accounts/acc_123 \
+  -H "authorization: Bearer ak_test_..."
+```
