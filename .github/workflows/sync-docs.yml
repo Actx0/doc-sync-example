@@ -14,7 +14,7 @@ jobs:
 
       - name: Sync knowledge
         id: sync
-        uses: Actx0/doc-sync@v1.0.0
+        uses: Actx0/doc-sync@v1.0.1
         with:
           workspace_id: ${{ secrets.ACTX0_WORKSPACE_ID }}
           access_key: ${{ secrets.ACTX0_ACCESS_KEY }}
