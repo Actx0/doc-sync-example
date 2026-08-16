@@ -18,4 +18,4 @@ Workspace owners and operators. Read-only members can view accounts and invoices
 
 ## How do I rotate an API key?
 
-Create a second key, switch clients, then revoke the old key. Revocation is immediate.
+Create a second api key, switch clients, then revoke the old key. Revocation is immediate.
