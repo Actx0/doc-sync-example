@@ -15,7 +15,7 @@ Unchanged files are skipped by checksum. Changed files replace the previous docu
 The workflow in [`.github/workflows/sync-docs.yml`](.github/workflows/sync-docs.yml) checks out the repo and runs:
 
 ```yaml
-- uses: Actx0/doc-sync@v1.0.0
+- uses: Actx0/doc-sync@v1.0.1
   with:
     workspace_id: ${{ secrets.ACTX0_WORKSPACE_ID }}
     access_key: ${{ secrets.ACTX0_ACCESS_KEY }}
@@ -43,8 +43,8 @@ docs/
 ├── architecture.md
 ├── faq.md
 ├── glossary.md
-├── changelog.markdown      # .markdown
-├── notes.txt               # plain text
+├── changelog.markdown
+├── notes.txt
 ├── ops-notes.txt
 ├── api/
 │   ├── authentication.md
@@ -66,7 +66,7 @@ docs/
 │   ├── env-vars.md
 │   └── error-codes.md
 └── snippets/
-    └── curl-examples.mdx   # .mdx
+    └── curl-examples.mdx
 ```
 
 `paths: docs/` walks that directory and syncs `.md`, `.mdx`, `.markdown`, and `.txt` files. You can also pass globs or individual files:
@@ -78,8 +78,6 @@ paths: |
   docs/getting-started.md
   docs/notes.txt
 ```
-
-Overlapping patterns are de-duplicated. Hidden directories, `node_modules`, and `vendor` are skipped.
 
 ## Outputs
 
